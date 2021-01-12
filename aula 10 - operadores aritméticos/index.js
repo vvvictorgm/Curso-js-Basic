@@ -47,5 +47,15 @@ console.log(++contador);
  const erro2 = 'Victor';
  console.log(erro1 * erro2);
 
+ //convertendo 
+ //parteInt = converte para Int
+ //parteFloat = converte para float (casas decimais)
+ //number = converte e foda-se
+
+ const erro3 = 10;
+ const erro4 = Number('5');
+ const erro5 = parseInt('10');
+ const erro6 = parseFloat('39.450');
+ console.log(erro3 * erro4);
 
  
