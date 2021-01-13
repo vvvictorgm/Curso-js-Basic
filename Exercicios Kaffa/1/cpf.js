@@ -72,8 +72,24 @@ function verificarCNPJ(cnpj){
             }
             //and than just add to calculo for make the division
             calculo += NumerosSeparados[i];
-            console.log(calculo);
     }
+    //now we do the calculus to take the rest of division
+    resto1 = calculo % 11;
+
+    //for the rules, if the rest of the divisions if bellow 2, is 0, and if is above, than we have to sub rest to 11
+    if(resto1 < 2)
+    {
+    resto1 = 0;
+    }else{
+        resto1 = 11-resto1;
+    }
+    //finally, the if the rest is diferent, so, it's invalid
+    if(resto1 =! CD.charAt(0)){
+        return false;
+    }
+    
+    
+
     
 }
 
