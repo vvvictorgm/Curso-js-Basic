@@ -4,6 +4,10 @@ let varC = 'C'; //A
 
 let varSobra = varA;
 
+varA = varB;
+varB = varC;
+varC = varSobra;
+
 
 
 
