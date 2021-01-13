@@ -1,5 +1,7 @@
-//at this point i read the exercicie again and i see it's not CPF, but CNPJ, let's start again...
-/*the rules for a CNPJ valdidation is:
+
+/*
+translate by Victor Augusto Nithack Frazatto.
+the rules for a CNPJ valdidation is:
 CNPJ has 14 numbers and is divide by 3 parts:
 1°- represents the number of subscription;
 2°- represents a unique code for the Matrix or branch;
@@ -7,20 +9,21 @@ CNPJ has 14 numbers and is divide by 3 parts:
 
 We have to calculate the CD using the first 12 numbers, 
 
-for the first one we have to multiple the numbers according of the table:
-position = p;
+*for the first one we have to multiple the numbers according of the table:
+*position = p;
+*
+*p1 = 5  || p2 = 4|| p3 = 3 || p4  = 2 || p5  = 9 || p6  = 8 || p7  = 7 || p8 = 6 || p9  = 5 || p10  = 4 || p11  = 3 || p12  = 2;
+*
+*than we calculate the sum of the results.
+*
+*if the result of the calculate we have to divide by 11 and use the rest of the division and use this to sub 11.
+*if the rest of the division is under 2 the first digit is 0;
 
-p1 = 5  || p2 = 4|| p3 = 3 || p4  = 2 || p5  = 9 || p6  = 8 || p7  = 7 || p8 =6 || p9  = 5 || p10  = 4 || p11  = 3 || p12  = 2;
-
-than we calculate the sum of the results.
-
-if the result of the calculate we have to divide by 11 and use the rest of the division and use this to sub 11.
-if the rest of the division is under 2 the first digit is 0;
-
-
-
-
-
+*For the secound one, we have to use the first CD, and a new table:
+*
+*p1 = 6  || p2 = 5|| p3 = 4 || p4  = 3 || p5  = 2 || p6  = 9 || p7  = 8 || p8 = 7 || p9  = 6 || p10  = 5 || p11  = 4 || p12  = 3; || CD = 2
+*
+*than, we'll do the same as the last time.
 */
 
 let cnpjTeste = '34.963.911/0001-36';
