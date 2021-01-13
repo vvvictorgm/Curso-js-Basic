@@ -4,12 +4,23 @@ CNPJ has 14 numbers and is divide by 3 parts:
 1°- represents the number of subscription;
 2°- represents a unique code for the Matrix or branch;
 3°- represents for the check digits(CD);
-We have to calculate the CD using the first 12 numbers, we have to multiple the numbers according of the table:
+
+We have to calculate the CD using the first 12 numbers, 
+
+for the first one we have to multiple the numbers according of the table:
 position = p;
 
 p1 = 5  || p2 = 4|| p3 = 3 || p4  = 2 || p5  = 9 || p6  = 8 || p7  = 7 || p8 =6 || p9  = 5 || p10  = 4 || p11  = 3 || p12  = 2;
 
-than we calculate the sum of the results
+than we calculate the sum of the results.
+
+if the result of the calculate we have to divide by 11 and use the rest of the division and use this to sub 11.
+if the rest of the division is under 2 the first digit is 0;
+
+
+
+
+
 */
 
 let cnpjTeste = '34.963.911/0001-36';
