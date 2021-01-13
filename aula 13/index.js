@@ -25,4 +25,6 @@ console.log(OutraString.replace(/r/g, '#'));
 
 let OutraString = 'O rato roeu a roupa do rei de roma.';
 
-console.log(OutraString.split(' '));
+console.log(OutraString.split(' ', 2));
+console.log(OutraString.toUpperCase());
+console.log(OutraString.toLowerCase());
