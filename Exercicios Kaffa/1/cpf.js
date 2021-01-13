@@ -26,7 +26,7 @@ We have to calculate the CD using the first 12 numbers,
 *than, we'll do the same as the last time.
 */
 
-let cnpjTeste = '11.444.777/0001-61';
+let cnpjTeste = '11.444.777/0001-31';
 function verificarCNPJ(cnpj){
     let resto1,resto2;
     let tabelaD1 = 5;
@@ -83,14 +83,12 @@ function verificarCNPJ(cnpj){
     }else{
         resto1 = 11-resto1;
     }
+    console.log(resto1, CD.charAt(0));
     //finally, the if the rest is diferent, so, it's invalid
-    if(resto1 =! CD.charAt(0)){
+    if(resto1 != CD.charAt(0)){
         return false;
     }
-    
-    
-
-    
+    return true;
 }
 
 if(verificarCNPJ(cnpjTeste)){
