@@ -1,6 +1,8 @@
 //the information on what criteria are needed to validate a CPF was taken from the IRS website
+//at this point i read the exercicie again and i see it's not CPF, but CNPJ, let's start again...
 
-let cpfTeste = 10;
+let cpfTeste = '430.780.948-39';
+let contador = 0;
 
 function verificarCPF(cpf){
     //in this point we will remove all points and expressions in the cpf, if it has
@@ -23,6 +25,8 @@ function verificarCPF(cpf){
     cpf == "99999999999"){
         return false;
     }
+    //now we have to valid the 1° digit
+
 
 
 }
