@@ -16,10 +16,13 @@ console.log(umaString.match(/[a-z]/g));
 console.log(umaString.search(/[a-z]/));
 console.log(umaString.replace('Um', 'Outra'));
 
-let OutraString = 'O rato roeu a roupa do rei de roma.';
 
 console.log(OutraString.replace(/r/, '#'));
 console.log(OutraString.replace(/r/g, '#'));
 */
 //fatiar
 //console.log(umaString.slice(2,6));
+
+let OutraString = 'O rato roeu a roupa do rei de roma.';
+
+console.log(OutraString.split(' '));
