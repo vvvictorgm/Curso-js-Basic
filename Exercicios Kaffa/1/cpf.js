@@ -1,28 +1,39 @@
-//the information on what criteria are needed to validate a CPF was taken from the IRS website
 //at this point i read the exercicie again and i see it's not CPF, but CNPJ, let's start again...
+/*the rules for a CNPJ valdidation is:
+CNPJ has 14 numbers and is divide by 3 parts:
+1°- represents the number of subscription;
+2°- represents a unique code for the Matrix or branch;
+3°- represents for the check digits(CD);
+We have to calculate the CD using the first 12 numbers, we have to multiple the numbers according of the table:
+position = p;
 
-let cpfTeste = '430.780.948-39';
+p1 = 5  || p2 = 4|| p3 = 3 || p4  = 2 || p5  = 9 || p6  = 8 || p7  = 7 || p8 =6 || p9  = 5 || p10  = 4 || p11  = 3 || p12  = 2;
+
+than we calculate the sum of the results
+*/
+
+let cnpjTeste = '34.963.911/0001-36';
 let contador = 0;
 
-function verificarCPF(cpf){
+function verificarCNPJ(cnpj){
     //in this point we will remove all points and expressions in the cpf, if it has
-    cpf = cpf.replace(/[^\d]+/g,''); 
-    if(cpf == ''){
+    cnpj = cnpj.replace(/[^\d]+/g,''); 
+    if(cnpj == ''){
         return false;
     }   
 
-//first: if the cpf has less than 11 characters, and see if they aren't 111, 222, 333 etc...
-    if(cpf.length != 11 ||
-    cpf == "00000000000" ||       
-    cpf == "11111111111" ||         
-    cpf == "22222222222" ||         
-    cpf == "33333333333" ||         
-    cpf == "44444444444" ||         
-    cpf == "55555555555" ||         
-    cpf == "66666666666" ||         
-    cpf == "77777777777" ||         
-    cpf == "88888888888" ||         
-    cpf == "99999999999"){
+//first: if the cpf has less than 14 characters, and see if they aren't 111, 222, 333 etc...
+    if(cnpj.length != 14 ||
+    cnpj == "00000000000000" ||
+    cnpj == "11111111111111" ||
+    cnpj == "22222222222222" ||
+    cnpj == "33333333333333" ||
+    cnpj == "44444444444444" ||
+    cnpj == "55555555555555" ||
+    cnpj == "66666666666666" ||
+    cnpj == "77777777777777" ||
+    cnpj == "88888888888888" ||
+    cnpj == "99999999999999"){
         return false;
     }
     //now we have to valid the 1° digit
