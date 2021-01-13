@@ -27,18 +27,12 @@ We have to calculate the CD using the first 12 numbers,
 */
 
 let cnpjTeste = '11.444.777/0001-61';
-
-
-
-
-
 function verificarCNPJ(cnpj){
     let resto1,resto2;
     let tabelaD1 = 5;
     let calculo = 0
     let NumerosSeparados = [];
     
-
     /*in this point we will remove all points and expressions in the cpf, if it has, 
     we using /[^\d], it's a regular expressionon to match anything but number, 'g' if for global, so we replace the 'other things's for nothing,
     we  transform, for exemple '34.963.911/0001-36' in 34963911000136
@@ -51,7 +45,6 @@ function verificarCNPJ(cnpj){
     let cnpjSemDigitos = cnpj.length - 2;
     let CD = cnpj.substring(cnpjSemDigitos);
     
-
 
 //first: if the cpf has less than 14 characters, and see if they aren't 111, 222, 333 etc...
     if(cnpj.length != 14 ||
@@ -82,9 +75,6 @@ function verificarCNPJ(cnpj){
             console.log(calculo);
     }
     
-
-
-
 }
 
 if(verificarCNPJ(cnpjTeste)){
