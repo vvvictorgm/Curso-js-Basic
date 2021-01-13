@@ -8,12 +8,10 @@ varA = varB;
 varB = varC;
 varC = varSobra;
 
-
-
-
-
-
-
-
-
 console.log(varA,varB,varC);
+
+
+
+
+
+
