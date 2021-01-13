@@ -26,15 +26,16 @@ We have to calculate the CD using the first 12 numbers,
 *than, we'll do the same as the last time.
 */
 
-let cnpjTeste = '34.963.911/0001-36';
+let cnpjTeste = '11.444.777/0001-61';
 
 
 
 
 
 function verificarCNPJ(cnpj){
-    let calculo,digito1,digito2,posicao;
-    let contador = 0;
+    let resto1,resto2;
+    let tabelaD1 = 5;
+    let calculo = 0
     let NumerosSeparados = [];
     
 
@@ -48,9 +49,9 @@ function verificarCNPJ(cnpj){
     }   
 
     let cnpjSemDigitos = cnpj.length - 2;
-    let numerosSemCD = cnpj.substring(0,cnpjSemDigitos);
     let CD = cnpj.substring(cnpjSemDigitos);
     
+
 
 //first: if the cpf has less than 14 characters, and see if they aren't 111, 222, 333 etc...
     if(cnpj.length != 14 ||
@@ -68,12 +69,24 @@ function verificarCNPJ(cnpj){
     }
 
     //now we have to valid the 1° digit
-     for (i = 0; i<= cnpjSemDigitos; i++) {
-            NumerosSeparados[i] = cnpj[i];
-            console.log(NumerosSeparados[i]);
+    //first thing is create a Array for take every number separated
+     for (i = 0; i<cnpjSemDigitos; i++) {
+            NumerosSeparados[i] = Number(cnpj[i]*tabelaD1);
+            //than we multiple this array number by the table
+            tabelaD1 -= 1;
+            if(tabelaD1 <2){
+                tabelaD1 = 9;
+            }
+            //and than just add to calculo for make the division
+            calculo += NumerosSeparados[i];
+            console.log(calculo);
     }
     
+
+
+
 }
+
 if(verificarCNPJ(cnpjTeste)){
     console.log("true");
 }else{
