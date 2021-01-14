@@ -1,11 +1,11 @@
 
 /*
-translate by Victor Augusto Nithack Frazatto.
-the rules for a CNPJ valdidation is:
+translation by Victor Augusto Nithack Frazatto.
+the rules for a CNPJ valdidation are:
 CNPJ has 14 numbers and is divide by 3 parts:
 1°- represents the number of subscription;
 2°- represents a unique code for the Matrix or branch;
-3°- represents for the check digits(CD);
+3°- represents the check digits(CD);
 
 We have to calculate the CD using the first 12 numbers, 
 
@@ -14,7 +14,7 @@ We have to calculate the CD using the first 12 numbers,
 *
 *p1 = 5  || p2 = 4|| p3 = 3 || p4  = 2 || p5  = 9 || p6  = 8 || p7  = 7 || p8 = 6 || p9  = 5 || p10  = 4 || p11  = 3 || p12  = 2;
 *
-*than we calculate the sum of the results.
+*then we calculate the sum of the results.
 *
 *if the result of the calculate we have to divide by 11 and use the rest of the division and use this to sub 11.
 *if the rest of the division is under 2 the first digit is 0;
@@ -26,7 +26,14 @@ We have to calculate the CD using the first 12 numbers,
 *than, we'll do the same as the last time.
 */
 
-let cnpjTeste = '34.963.911/0001-36';
+let cnpjUsuario = prompt('Digite seu CNPJ');
+if(verificarCNPJ(cnpjUsuario)){
+    alert('CNPJ Válido');
+
+}else{
+    alert('CNPJ invalido');
+}
+
 function verificarCNPJ(cnpj){
     let resto;
     let tabela;
@@ -123,10 +130,11 @@ function verificarCNPJ(cnpj){
         resto = 11-resto;
     }
 
-    //finally, if the rest is diferent, so, it's invalid
+    //if the rest is diferent, so, it's invalid
     if(resto != CD.charAt(1)){
         return false;
     }
+    //if all tests pass, well, it's valid, congrets
     return true;
 }
 
