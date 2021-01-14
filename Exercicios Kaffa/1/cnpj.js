@@ -26,7 +26,7 @@ We have to calculate the CD using the first 12 numbers,
 *than, we'll do the same as the last time.
 */
 
-let cnpjTeste = '11.444.777/0001-61';
+let cnpjTeste = '34.963.911/0001-36';
 function verificarCNPJ(cnpj){
     let resto;
     let tabela;
@@ -112,6 +112,7 @@ function verificarCNPJ(cnpj){
         calculo += numerosSeparados[i];
         
     }
+    
     //now we do the calculus to take the rest of division again
     resto = calculo % 11;
     //for the rules, if the rest of the divisions if bellow 2, is 0, and if is above, than we have to sub rest to 11
@@ -121,16 +122,11 @@ function verificarCNPJ(cnpj){
     }else{
         resto = 11-resto;
     }
+
     //finally, if the rest is diferent, so, it's invalid
     if(resto != CD.charAt(1)){
         return false;
     }
     return true;
-}
-
-if(verificarCNPJ(cnpjTeste)){
-    console.log("true");
-}else{
-    console.log("false");
 }
 
