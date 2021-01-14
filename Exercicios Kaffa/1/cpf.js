@@ -29,9 +29,9 @@ We have to calculate the CD using the first 12 numbers,
 let cnpjTeste = '11.444.777/0001-61';
 function verificarCNPJ(cnpj){
     let resto;
-    let tabela = 5;
-    let calculo = 0
-    let NumerosSeparados = [];
+    let tabela;
+    let calculo;
+    let numerosSeparados = [];
     
     /*in this point we will remove all points and expressions in the cpf, if it has, 
     we using /[^\d], it's a regular expressionon to match anything but number, 'g' if for global, so we replace the 'other things's for nothing,
@@ -62,16 +62,23 @@ function verificarCNPJ(cnpj){
     }
 
     //now we have to valid the 1° digit
+    //the first table start the * at 5, so we define it
+    tabela = 5;
+    //and now we start 'calculo' to zero
+    calculo = 0;
     //first thing is create a Array for take every number separated
      for (i = 0; i<cnpjSemDigitos; i++) {
-            NumerosSeparados[i] = Number(cnpj[i]*tabela);
-            //than we multiple this array number by the table
+            numerosSeparados[i] = Number(cnpj[i]*tabela);
+            /*so than we multiple this array number by the rules of the table 
+            looking at the table we can see three things, first, it start at the 5, decrement  one by one for each number, 
+            and if the number is bellow 2 transformt it in 9 and continuo the decrement until finish the loop.
+            */
             tabela -= 1;
             if(tabela <2){
                 tabela = 9;
             }
-            //and than just add to calculo for make the division
-            calculo += NumerosSeparados[i];
+            //for each result we add to calculo for make the division
+            calculo += numerosSeparados[i];
     }
     //now we do the calculus to take the rest of division
     resto = calculo % 11;
@@ -83,23 +90,26 @@ function verificarCNPJ(cnpj){
     }else{
         resto = 11-resto1;
     }
-    console.log(resto1, CD.charAt(0));
-    //finally, the if the rest is diferent, so, it's invalid
+    //finally, if the rest is diferent, so, it's invalid
     if(resto1 != CD.charAt(0)){
         return false;
     }
 
+    //now we need to check the 2°digit
+    //we have to change the variable tabale to 6,
     tabela = 6;
+    //and the calcula return to 0
     calculo = 0;
+    //in this for we have one diferent thing, we have to add the digit to "numerosSeparados"
     for (i = 0; i<cnpjSemDigitos+1; i++) {
-        NumerosSeparados[i] = Number(cnpj[i]*tabela);
+        numerosSeparados[i] = Number(cnpj[i]*tabela);
         //than we multiple this array number by the table
         tabela -= 1;
         if(tabela <2){
             tabela = 9;
         }
         //and than just add to calculo for make the division
-        calculo += NumerosSeparados[i];
+        calculo += numerosSeparados[i];
 }
 
 
