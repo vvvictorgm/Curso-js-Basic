@@ -26,10 +26,10 @@ We have to calculate the CD using the first 12 numbers,
 *than, we'll do the same as the last time.
 */
 
-let cnpjTeste = '11.444.777/0001-31';
+let cnpjTeste = '11.444.777/0001-61';
 function verificarCNPJ(cnpj){
-    let resto1,resto2;
-    let tabelaD1 = 5;
+    let resto;
+    let tabela = 5;
     let calculo = 0
     let NumerosSeparados = [];
     
@@ -64,30 +64,46 @@ function verificarCNPJ(cnpj){
     //now we have to valid the 1° digit
     //first thing is create a Array for take every number separated
      for (i = 0; i<cnpjSemDigitos; i++) {
-            NumerosSeparados[i] = Number(cnpj[i]*tabelaD1);
+            NumerosSeparados[i] = Number(cnpj[i]*tabela);
             //than we multiple this array number by the table
-            tabelaD1 -= 1;
-            if(tabelaD1 <2){
-                tabelaD1 = 9;
+            tabela -= 1;
+            if(tabela <2){
+                tabela = 9;
             }
             //and than just add to calculo for make the division
             calculo += NumerosSeparados[i];
     }
     //now we do the calculus to take the rest of division
-    resto1 = calculo % 11;
+    resto = calculo % 11;
 
     //for the rules, if the rest of the divisions if bellow 2, is 0, and if is above, than we have to sub rest to 11
-    if(resto1 < 2)
+    if(resto < 2)
     {
-    resto1 = 0;
+    resto = 0;
     }else{
-        resto1 = 11-resto1;
+        resto = 11-resto1;
     }
     console.log(resto1, CD.charAt(0));
     //finally, the if the rest is diferent, so, it's invalid
     if(resto1 != CD.charAt(0)){
         return false;
     }
+
+    tabela = 6;
+    calculo = 0;
+    for (i = 0; i<cnpjSemDigitos+1; i++) {
+        NumerosSeparados[i] = Number(cnpj[i]*tabela);
+        //than we multiple this array number by the table
+        tabela -= 1;
+        if(tabela <2){
+            tabela = 9;
+        }
+        //and than just add to calculo for make the division
+        calculo += NumerosSeparados[i];
+}
+
+
+
     return true;
 }
 
@@ -96,3 +112,4 @@ if(verificarCNPJ(cnpjTeste)){
 }else{
     console.log("false");
 }
+
