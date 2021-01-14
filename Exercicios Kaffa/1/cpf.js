@@ -88,10 +88,10 @@ function verificarCNPJ(cnpj){
     {
     resto = 0;
     }else{
-        resto = 11-resto1;
+        resto = 11-resto;
     }
     //finally, if the rest is diferent, so, it's invalid
-    if(resto1 != CD.charAt(0)){
+    if(resto != CD.charAt(0)){
         return false;
     }
 
@@ -100,7 +100,7 @@ function verificarCNPJ(cnpj){
     tabela = 6;
     //and the calcula return to 0
     calculo = 0;
-    //in this for we have one diferent thing, we have to add the digit to "numerosSeparados"
+    //in this for we have one diferent thing, we have to add the digit to "cnpjSemDigitos" because now we use the first digit too.
     for (i = 0; i<cnpjSemDigitos+1; i++) {
         numerosSeparados[i] = Number(cnpj[i]*tabela);
         //than we multiple this array number by the table
@@ -110,10 +110,21 @@ function verificarCNPJ(cnpj){
         }
         //and than just add to calculo for make the division
         calculo += numerosSeparados[i];
-}
-
-
-
+        
+    }
+    //now we do the calculus to take the rest of division again
+    resto = calculo % 11;
+    //for the rules, if the rest of the divisions if bellow 2, is 0, and if is above, than we have to sub rest to 11
+    if(resto < 2)
+    {
+    resto = 0;
+    }else{
+        resto = 11-resto;
+    }
+    //finally, if the rest is diferent, so, it's invalid
+    if(resto != CD.charAt(1)){
+        return false;
+    }
     return true;
 }
 
