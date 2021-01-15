@@ -1,6 +1,6 @@
 //create the retangles
-let retangulo = [7,2,13,7];
-let retangulo2 = [11,11,15,13];
+let retangulo = [3,5,11,11];
+let retangulo2 = [7,2,13,7];
 
 function intersec(rec1,rec2){
     
@@ -18,12 +18,13 @@ function intersec(rec1,rec2){
     let tr_y = Math.min(y2, y4);
     
     let total = (tr_x - bl_x) * (tr_y - bl_y);
-    console.log(total);
+    let area1 = Math.abs(x1 - y1) * Math.abs(x2 - y2);
+    let area2 = Math.abs(x3 - y3) * Math.abs(x4 - y4);
+    let areaTotalInterccao = area1+area2-total;
+    console.log(areaTotalInterccao);
 
- 
-	
 
-    //we know the rectangles are overlapping if:
+     //we know the rectangles are overlapping if:
     if((x1 < x4) && (x3 < x2) && (y1 < y4) && (y3 < y2)){
         return true;
         //and if some point of the rectangles just touch in other, it's true too.
@@ -35,18 +36,7 @@ function intersec(rec1,rec2){
     }
 
 }
-function areaDosRetangle(rec1,rec2){
-    let r1_overlap,r2_overlp;
-// Question 4
-    //first we have to compute the area of retangles
-    r1_overlap = Math.abs(x1 - y1) * Math.abs(x2 - y2);
-    r2_overlp = Math.abs(x3 - y3) * Math.abs(x4 - y4);
-    return(r1_overlap,r2_overlp);
-}
-function areaEmInterccao(){
-    
 
-}
 
 console.log(intersec(retangulo,retangulo2));
 
