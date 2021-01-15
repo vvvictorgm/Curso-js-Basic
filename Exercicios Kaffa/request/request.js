@@ -11,3 +11,32 @@ const request = obj =>{
     })
     
 };
+
+document.addEventListener('click', e=>{
+    const el = e.target;
+    const tag = el.tagName.toLowerCase();
+
+    if(tag === 'a'){ 
+        e.preventDefault;   
+        carregaPagina(el);
+    }
+ });
+
+ function carregaPagina(el){
+     const href =el.getAttribute('href');
+    request({
+        method:'GET',
+        url: href,
+        succes(response){
+            carregaResultado(response);
+        },
+        error(errorText){
+            console.log(errorText);
+
+        }
+    });
+ }
+ function carregaResultado(response){
+     const resultado = document.querySelector('.resultado');
+     resultado.innerHTML = response; 
+ }
