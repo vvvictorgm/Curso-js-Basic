@@ -1,5 +1,5 @@
 //create the retangles
-let retangulo = [0,0,1,1];
+let retangulo = [7,2,13,7];
 let retangulo2 = [7,2,13,7];
 
 function intersec(rec1,rec2){
@@ -17,13 +17,16 @@ function intersec(rec1,rec2){
     */
 
     let areaTest = ((y2-y1+1)*(x2-x1+1));
-    let areaTest2 = ((y2-y1+1)*(x2-x1+1));
+    let areaTest2 = ((y4-y3+1)*(x4-x3+1));
+    /*i try that first, but the Question say Note: the points are included in the rectangle and have a dimension of 1 unit; 
+    the rectangle (0, 0; 1, 1) have an area of 4 units. so i have to check again.
+
     let area1 = ((x2-x1)*(y2-y1));
     let area2 = ((x4-x3)*(y4-y3));
-
+*/
     //let areaTotalInterccao = area1+area2-totalIntersec;
 
-    console.log(areaTest);
+    console.log(areaTest,areaTest2);
 
 
 
