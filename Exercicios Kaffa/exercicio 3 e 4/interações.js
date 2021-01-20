@@ -11,6 +11,7 @@ function intersec(rec1, rec2) {
     let x1 = rec1[0], y1 = rec1[1], x2 = rec1[2], y2 = rec1[3];
     //make the secound one
     let x3 = rec2[0], y3 = rec2[1], x4 = rec2[2], y4 = rec2[3];
+    //question 5
     /*than we check all the possibilities when just 1 point is touching with another, 
     this happen only when cornors touch    
     */
@@ -35,16 +36,20 @@ function intersec(rec1, rec2) {
         //if not, we have 0 intersect in the Y
             yIntersec = 0;
         }
-
+        /*this point we check if xIntersec or yIntersec are 0, because if one of was is we have to make a sum
+        this happen because the point are include, if it's not, in that case the interect will be zero, in our case, if one are zero
+        and another is something, so we image the rectangles are just touching in x ou y
+        */
         if ((xIntersec == 0) || (yIntersec == 0)) {
             totalIntersec = xIntersec + yIntersec;
         } else {
+            //if it's not just the x or the y are touching, so we have full interect, and we calculate it
             totalIntersec = xIntersec * yIntersec;
         }
     }
     console.log(totalIntersec);
-
-    //we know the rectangles are overlapping if:
+    //question 4
+    //we know the rectangles are overlapping if
     if ((x1 < x4) && (x3 < x2) && (y1 < y4) && (y3 < y2)
         //and if some point of the rectangles just touch in other, it's true too.
         || x1 == x3 || x1 == x4 || x2 == x3 || x2 == x4 || y1 == y3 || y1 == y4 || y2 == y3 || y2 == y4) {
@@ -55,8 +60,5 @@ function intersec(rec1, rec2) {
     }
 
 }
-
-
-
 console.log(intersec(retangulo, retangulo2));
 
