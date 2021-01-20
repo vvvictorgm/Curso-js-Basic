@@ -19,14 +19,20 @@ function intersec(rec1, rec2) {
     } else {
         //when we exclude the possibility of the cornors touching, know we have to check if in fact the rectangles are intersect each others
         if ((Math.min(x2, x4) - Math.max(x1, x3)) > 0) {
+            /*and if it's > 0, so in fact the rectangles are intersect, so for this particular case, when the points are included
+            have a dimension, we have to add 1 in this moment, because if it don't count we just say the are touching and not 
+            intersecting, in that case it's necessary to include this points on the math
+            */
             xIntersec = (Math.min(x2, x4) - Math.max(x1, x3)) + 1;
 } else {
+    //if not, so we have 0 intersect in the X
             xIntersec = 0;
         }
-
+        //we check know if the are intersect or touch in y 
         if ((Math.min(y2, y4) - Math.max(y1, y3)) > 0) {
             yIntersec = (Math.min(y2, y4) - Math.max(y1, y3)) + 1;
 } else {
+        //if not, we have 0 intersect in the Y
             yIntersec = 0;
         }
 
