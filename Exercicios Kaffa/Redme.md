@@ -9,4 +9,5 @@ Pode ser compilado direto pelo browser caso deseje
 Foi utilizado o Android Studio na versão atual para a construção de todo projeto.
 
 Pode ser compilado pelo Android Studio e/ou Eclipse,
+É necessário utilizar um emulador de android para a execução do projeto.
 
