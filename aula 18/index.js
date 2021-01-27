@@ -1,3 +1,5 @@
-const nome = 'Luiz';
-const sobrenome = 'Miranda';
-const idade = 25;
+const pessoa = {
+ nome:'Luiz',
+ sobrenome: 'Miranda',
+ idade: 25,
+};
