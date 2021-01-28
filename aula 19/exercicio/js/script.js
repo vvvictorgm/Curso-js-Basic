@@ -13,9 +13,12 @@ function meuEscopo() {
    //o efeito é o mesmo, mas agora estamos adicionando um Listener
    form.addEventListener('submit', function(evento){
        evento.preventDefault();
-       console.log("foi enviado");
-
-       
+       const nome = form.querySelector('.nome');
+       const nome = form.querySelector('.sobrenome');
+       const nome = form.querySelector('.peso');
+       const nome = form.querySelector('.altura');   
+       console.log("foi enviado");  
+  
    });
 }
 meuEscopo();
