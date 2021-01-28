@@ -17,3 +17,7 @@ let d = c;
 c.push(4);
 
 console.log(c,d);
+
+d.pop();
+
+console.log(c,d);
