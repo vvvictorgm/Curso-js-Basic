@@ -5,7 +5,7 @@ São copiados*/
 
 let a = 'A';
 let b = a;
-let c = b;
+
 
 console.log(a,b);
 
@@ -15,8 +15,8 @@ console.log(a,b);
 //Referência (mutável) - array, object, funcion
 // são passados por referencia
 let c = [1,2,3];
-let d = c;
-
+let d = [...c];
+let f = d;
 c.push(4);
 
 console.log(c,d);
@@ -25,5 +25,5 @@ d.pop();
 
 console.log(c,d);
 
-a.push(5);
-console.log(c);
+c.push(5);
+console.log(f);
