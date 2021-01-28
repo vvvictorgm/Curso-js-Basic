@@ -13,3 +13,7 @@ console.log(a,b);
 //Referência (mutável) - array, object, funcion
 let c = [1,2,3];
 let d = c;
+
+c.push(4);
+
+console.log(c,d);
