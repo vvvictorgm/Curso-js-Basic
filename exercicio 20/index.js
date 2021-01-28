@@ -1,0 +1,10 @@
+/*
+Operadores de comparação
+>
+>=
+<=
+==
+===
+!=
+!==
+*/
