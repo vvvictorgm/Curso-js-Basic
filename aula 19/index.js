@@ -5,6 +5,7 @@ São copiados*/
 
 let a = 'A';
 let b = a;
+let c = b;
 
 console.log(a,b);
 
@@ -23,3 +24,6 @@ console.log(c,d);
 d.pop();
 
 console.log(c,d);
+
+a.push(5);
+console.log(c);
