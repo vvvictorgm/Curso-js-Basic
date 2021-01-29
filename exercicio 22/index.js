@@ -6,6 +6,6 @@ entre 18 - 23 - boa noite
  
  const hora = 12;
 
-if(hora <= 12){
+if(hora >= 0 && hora <= 11){
     console.log('Bom dia');
-}else
+}
