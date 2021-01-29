@@ -7,6 +7,7 @@ entre 18 - 23 - boa noite
  // sempre que utilizado a palavra else, preciso de um if antes
  // eu posso ter vários else ifs na checagem
  //só posso ter um else na checagem
+ //pode fazer if e else sem else if
  const hora = 12;
 
 if(hora >= 0 && hora <= 11){
