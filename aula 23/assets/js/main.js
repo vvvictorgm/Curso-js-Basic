@@ -1,4 +1,4 @@
-function meuEscopo{
+function meuEscopo(){
     const peso, altura;
 peso = document.getElementById('peso');
 altura = document.getElementById('altura');
