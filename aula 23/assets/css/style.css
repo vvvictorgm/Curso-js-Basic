@@ -56,3 +56,12 @@ form button:hover{
     background: var(--primary-color-darker);
 
 }
+.resultado_positivo{
+    background: rgb(88, 185, 101);
+    padding: 10px 20px;
+}
+.resultado_negativo{
+
+        background: rgb(172, 72, 72);
+        padding: 10px 20px;
+}

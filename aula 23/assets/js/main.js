@@ -54,8 +54,18 @@ function resultado (msg, isValid){
     const resultado = document.querySelector('#resultado');
     resultado.innerHTML = '';
     const p = criaP(); 
+    
+
+    if(isValid){
+    p.classList.add('resultado_positivo'); 
+    }else{
+        p.classList.add('resultado_negativo'); 
+
+    }
+
     p.innerHTML = msg;
     resultado.appendChild(p);
+
 
 }
 
