@@ -1,13 +1,17 @@
 function meuEscopo(){
-    const peso, altura;
-peso = document.getElementById('peso');
-altura = document.getElementById('altura');
-const form = document.querySelector('#form');
-let imc;
+    //const peso = document.getElementById('peso'); ;
+
+    //const altura = document.getElementById('altura');
+const form = document.querySelector('#formulario');
+
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    imc = (peso/altura)*altura;
+    //imc = (peso/altura)*altura;
+    //if(imc <18.5){
+    //}
+    console.log("evento previnido");
+
 });
 
 
