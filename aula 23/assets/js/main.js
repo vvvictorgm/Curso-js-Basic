@@ -1,20 +1,18 @@
-function meuEscopo(){
-    //const peso = document.getElementById('peso'); ;
-
-    //const altura = document.getElementById('altura');
 const form = document.querySelector('#formulario');
 
 
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    //imc = (peso/altura)*altura;
-    //if(imc <18.5){
-    //}
-    console.log("evento previnido");
+form.addEventListener('submit', function(evento){
+    evento.preventDefault();
+    resultado("oi");
 
 });
 
-
+function resultado (msg){
+    const resultado = document.querySelector('#resultado');
+    resultado.innerHTML = '';
+    const p = document.createElement('p');
+    p.innerHTML = 'Qualquer coisa';
+    resultado.appendChild(p);
 }
 
-meuEscopo();
+
