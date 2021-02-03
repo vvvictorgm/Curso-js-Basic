@@ -2,15 +2,12 @@ const data = new Date();
 const diaSemana = data.getDay();
 const diaSemanaTexto = (getDiaDaSemanaTexto(diaSemana));
 
-
 function getDiaDaSemanaTexto(data) {
     let diaSemanaTexto;
     switch (diaSemana) {
-
         case 0:
             diaSemanaTexto = 'Domingo';
             return (diaSemanaTexto);
-
         case 1:
             diaSemanaTexto = 'Segunda';
             return (diaSemanaTexto);
