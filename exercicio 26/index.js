@@ -24,5 +24,7 @@ switch (diaSemana){
         case 6:
         diaSemanaTexto ='Sabado' 
         break;
+        default:
+            diaSemanaTexto='';
     }
-console.log(diaSemana);
+console.log(diaSemana, diaSemanaTexto);
