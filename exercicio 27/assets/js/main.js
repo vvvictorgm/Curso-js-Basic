@@ -1,5 +1,6 @@
+
 function meuEscopo() {
-    const exibicao = document.querySelector('#principal');
+    const exibicao = document.querySelector('#principal h1');
     const data = new Date();
     console.log(data.getMonth());
     const dataArrumada = desmembrarDate(data);
@@ -8,16 +9,15 @@ function meuEscopo() {
 
         const dia = data.getDate();
         const diaNumero = data.getDay();
-        const mes = (data.getMonth());
+        const mes = data.getMonth();
         const ano = data.getFullYear();
-        const hora = data.getHours();
-        const minutos = data.getMinutes();
+        const hora = zeroAEsquerda(data.getHours());
+        const minutos = zeroAEsquerda(data.getMinutes());
 
         let diaArrumado = arrumarDia(dia);
         let mesArrumado = arrumarMes(mes);
 
 
-        console.log(`${dia}, ${diaNumero} de ${mes} de ${ano} <p>${hora}:${minutos}</p> `);
 
         return `${diaArrumado}, ${diaNumero} de ${mesArrumado} de ${ano} <p>${hora}:${minutos}</p> `;
 
@@ -53,6 +53,11 @@ function meuEscopo() {
                 return diaConvertido;
 
         }
+
+    }
+    
+    function zeroAEsquerda(num){
+        return num >=10 ? num : `0${num}`;
 
     }
 
