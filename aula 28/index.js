@@ -11,6 +11,7 @@ if(verdadeira){
     console.log(nome,nome2);
 
     if(verdadeira){
-        console.log('ok')
+        let nome = 'Outra coisa';
+        console.log(nome,nome2);
     }
 }
