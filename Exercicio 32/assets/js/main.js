@@ -6,8 +6,9 @@ const elementos =[
     {tag: 'section',texto:'Frase4'},
 ];
 for(i = 0; i <= elementos.length; i++){
-    let inserir = elementos.i;
-    console.log(inserir);
-//div.innerHTML();
+    let tag = elementos[i].tag;
+    let texto = elementos[i].texto;
+    console.log(tag,texto);
+    div.innerHTML += `<${tag}> ${texto}</${tag}>`;
 }
 
