@@ -13,10 +13,17 @@ const retornaHora = (data) => {
         hour12:false
     });
 } 
-
+try{
+const data = new Date('01-01-1970 12:58:12');
 const hora = retornaHora();
+console.log(retornaHora(1232));
 
-console.log(hora);
+}catch(e){
+    //tratar erro
+}finally{
+    console.log('bom dia.');
+}
+
 
 /*try{
     //É executado quando não há erros
