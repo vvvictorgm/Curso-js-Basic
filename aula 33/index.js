@@ -17,3 +17,6 @@ for (let chaves in pessoa){
 for (let dados in pessoa){
     console.log(pessoa[dados]);
 }
+
+console.log(pessoa.nome);
+console.log(pessoa['nome']);
