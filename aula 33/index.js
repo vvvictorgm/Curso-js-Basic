@@ -12,11 +12,9 @@ const pessoa ={
 };
 
 for (let chaves in pessoa){
-    console.log(chaves);
+    console.log(chaves,pessoa[chaves]);
 }
-for (let dados in pessoa){
-    console.log(pessoa[dados]);
-}
+
 
 console.log(pessoa.nome);
 console.log(pessoa['nome']);
