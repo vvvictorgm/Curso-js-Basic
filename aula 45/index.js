@@ -1,4 +1,21 @@
-try{
+const retornaHora = (data) => {
+
+    if (data && !(data instanceof Date)) {
+        throw new TypeError('Esperando instancia de Date');
+    }
+    if (!data) {
+        data = new Date();
+    }
+    return data.toLocaleTimeString('pt-BR',{
+        hour12:false
+    });
+} 
+
+const hora = retornaHora();
+
+console.log(hora);
+
+/*try{
     //É executado quando não há erros
     console.log(a);
     console.log('Abri um arquivo');
@@ -10,4 +27,6 @@ try{
 }finally{
     //é sempre executado
     console.log('sou sempre executado');
-}
+}*/
+
+
