@@ -1,5 +1,6 @@
 try{
     //É executado quando não há erros
+    console.log(a);
     console.log('Abri um arquivo');
     console.log('Manipulei o arquivo e deu erro');
     console.log('Fechei o arquivo');
