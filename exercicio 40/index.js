@@ -6,14 +6,16 @@
 //checar se o numero é realmente um numero = returne o que recebeu
 //use a função com número de 0 a 100
 function fizzBuzz(n1){
-    if(n1 === Nan) return n1;
+    if(n1 === NaN) return n1;
+    return(
+    n1 % 3 == 0 && n1 % 5 == 0?'FizzBuzz' : 
+    n1 % 3 == 0? 'Fizz' : 
+    n1 % 5 == 0? 'Buzz' :
+    n1);
 
-    n1 % 3 && n1% 5 === 0?'FizzBuzz': 
-    n1 % 3? 'Fizz' : 
-    n1 % 5? 'Buzz' :
-    n1;
 }
-/*
+
+
 i=0;
 do{
 fizzBuzz(i);
@@ -21,4 +23,3 @@ console.log(fizzBuzz(i));
 i++
 
 }while(i<=100);
-*/
