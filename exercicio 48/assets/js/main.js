@@ -12,7 +12,7 @@ function criaBotaoApagar(li) {
     li.innerHTML += ' ';
     const botaoApagar = document.createElement('button');
     botaoApagar.innerText = 'Apagar Tarefa';
-    botaoApagar.setAttribute('class', 'apagar');
+    botaoApagar.setAttribute('class', 'BotaoDeApagar');
     li.appendChild(botaoApagar);
 }
 
@@ -48,7 +48,7 @@ botaoAadicionarTarefa.addEventListener('click', function () {
 
 document.addEventListener('click', function(e){
 const elementoClicado = e.target;
-if(elementoClicado.classList.contains('apagar')){
+if(elementoClicado.classList.contains('BotaoDeApagar')){
     elementoClicado.parentElement.remove();
 }
 
@@ -56,5 +56,14 @@ if(elementoClicado.classList.contains('apagar')){
 
 function salvarTarefas(){
     const liTarefas = tarefas.querySelectorAll('li');
+    const listaDeTarefas = [];
+    for (let tarefa of liTarefas){
+        let tarefaTexto = tarefa.innerText;
+        tarefaTexto = tarefaTexto.replace('Apagar Tarefa', '').trim();
+        listaDeTarefas.push(tarefaTexto);
+        
+        
+    }
+    console.log(listaDeTarefas);
 
 }
