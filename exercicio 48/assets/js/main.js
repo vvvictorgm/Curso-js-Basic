@@ -1,0 +1,1 @@
+const novaTarefa = document.querySelector('.nova-tarefa');
