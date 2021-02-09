@@ -8,14 +8,17 @@ function criaLi(){
  
 }
 
+
 function criaTarefa(textoInput){
     const li = criaLi();
+    li.innerHTML = textoInput; 
+    tarefas.appendChild(li);
 
 }
 
 botaoAadicionarTarefa.addEventListener('click', function(){
     if(!novaTarefa.value) return;
-    criaTarefa();
+    criaTarefa(novaTarefa.value);
 
 
 });
