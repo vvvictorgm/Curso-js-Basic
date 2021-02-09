@@ -65,29 +65,39 @@ botaoAadicionarTarefa.addEventListener('click', function () {
 
 });
 //chama a função quando se é verificado se o item que contem a tag"botãoDeApagar" foi clicado
-document.addEventListener('click', function(e){
-const elementoClicado = e.target;
-if(elementoClicado.classList.contains('BotaoDeApagar')){
-    //faz a remoção do "pai" dele, e isso acaba que inclui ele mesmo
-    elementoClicado.parentElement.remove();
-}
-salvarTarefas();
+document.addEventListener('click', function (e) {
+    const elementoClicado = e.target;
+    if (elementoClicado.classList.contains('BotaoDeApagar')) {
+        //faz a remoção do "pai" dele, e isso acaba que inclui ele mesmo
+        elementoClicado.parentElement.remove();
+    }
+    salvarTarefas();
 
 });
 //função para salvar a tarefa no banco de dados
-function salvarTarefas(){
+function salvarTarefas() {
+    //cria uma constante que lista todos os li com todas as tarefas
     const liTarefas = tarefas.querySelectorAll('li');
+    //cria um array para armazenar as li
     const listaDeTarefas = [];
-    for (let tarefa of liTarefas){
+    for (let tarefa of liTarefas) {
+        //captura todos os textos 
         let tarefaTexto = tarefa.innerText;
+        //apaga o texto do botão tarefa
         tarefaTexto = tarefaTexto.replace('Apagar Tarefa', '').trim();
+        //insere a o texto da tarefa para dentro do array
         listaDeTarefas.push(tarefaTexto);
-        
-        
-    }
 
+
+    }
+    //cria uma variavel, e converste o JSON da listaDeTarefas para String
     const tarefasJSON = JSON.stringify(listaDeTarefas);
+    //salva o JSON dentro do localStorage(banco de dados)
     localStorage.setItem('tarefas', tarefasJSON);
-    console.log(listaDeTarefas);
 
 }
+function recuperarTarefasSalvas(){
+    const tarefas = localStorage.getItem('tarefas');
+    const listaDeTarefasRecuperadas = JSON.parse(tarefas);
+}
+recuperarTarefasSalvas();
