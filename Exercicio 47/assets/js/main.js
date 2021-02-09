@@ -22,24 +22,19 @@ function iniciarContador(){
 
 
 }
-function pausarContador(){
-    setTimeout(function(){
-        clearInterval(timer);
-    });
-}
-
-
 
 
 iniciar.addEventListener('click', function (evento) {
+    clearInterval(timer);
     iniciarContador();
 });
 
 pausar.addEventListener('click', function (evento) {
-    pausarContador();
+    clearInterval(timer);
 });
 
 zerar.addEventListener('click', function (evento) {
+    clearInterval(timer);
     relogio.innerText = horaZero(0);
     contador = 0;
 });
