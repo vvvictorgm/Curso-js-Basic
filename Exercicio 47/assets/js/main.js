@@ -1,3 +1,4 @@
+function meuRelogio(){
 const relogio = document.querySelector('.relogio');
 
 let contador = 0; 
@@ -39,5 +40,7 @@ document.addEventListener('click',function(e){
     }
 
 });
+}
+meuRelogio();
 
 
