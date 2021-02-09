@@ -2,36 +2,45 @@ const relogio = document.querySelector('.relogio');
 const iniciar = document.querySelector('.iniciar');
 const pausar = document.querySelector('.pausar');
 const zerar = document.querySelector('.zerar');
-const timer = transformarEmHora();
-timer.setHours(3,3,3);
+let contador = 0; 
+let timer;
 
-function transformarEmHora (){
-    let data = new Date();
-    data.setHours(0,0,0);
-    
-    return data.toLocaleTimeString('pt-BR', {
-        hour12:false
+function horaZero(contador) {
+    let data = new Date(contador *1000);
+
+    return data.toLocaleTimeString('pT-BR', {
+        hour12: false,
+        timeZone: 'UTC'
+    });
+}
+
+function iniciarContador(){
+    timer = setInterval(function () {
+        contador ++;
+        relogio.innerText = horaZero(contador);
+    }, 1000);
+
+
+}
+function pausarContador(){
+    setTimeout(function(){
+        clearInterval(timer);
     });
 }
 
 
 
 
-
-iniciar.addEventListener('click', function(evento){
-    setInterval(function(){
-        
-        relogio.innerHTML(timer);
-    },1000);  
-
-
+iniciar.addEventListener('click', function (evento) {
+    iniciarContador();
 });
 
-pausar.addEventListener('click', function(evento){
-
+pausar.addEventListener('click', function (evento) {
+    pausarContador();
 });
 
-zerar.addEventListener('click', function(evento){
-
+zerar.addEventListener('click', function (evento) {
+    relogio.innerText = horaZero(0);
+    contador = 0;
 });
 
