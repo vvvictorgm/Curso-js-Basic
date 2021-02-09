@@ -7,7 +7,13 @@ function criaLi(){
     return(li);
  
 }
+novaTarefa.addEventListener ('keypress', function(e){
+    if(e.keyCode === 13 ){
+        if(!novaTarefa.value) return;
+    criaTarefa(novaTarefa.value);
+    }
 
+});
 
 function criaTarefa(textoInput){
     const li = criaLi();
