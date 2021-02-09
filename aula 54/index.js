@@ -1,17 +1,21 @@
+function random (min = 1000, max = 3000){
+    const aleatorio = Math.random()*(max - min )+min;
+    return Math.floor(aleatorio);
+}
 function f1() {
     setTimeout(function () {
         console.log('f1');
-    }, 8000);
+    }, random());
 }
 function f2() {
     setTimeout(function () {
         console.log('f2');
-    }, 1000);
+    }, random());
 }
 function f3() {
     setTimeout(function () {
         console.log('f3');
-    }, 3000);
+    }, random());
 }
 
 f1();
