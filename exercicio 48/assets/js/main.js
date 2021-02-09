@@ -35,6 +35,7 @@ function criaTarefa(textoInput) {
     tarefas.appendChild(li);
     limpaInput();
     criaBotaoApagar(li);
+    salvarTarefas();
 
 }
 
@@ -52,3 +53,8 @@ if(elementoClicado.classList.contains('apagar')){
 }
 
 });
+
+function salvarTarefas(){
+    const liTarefas = tarefas.querySelectorAll('li');
+
+}
