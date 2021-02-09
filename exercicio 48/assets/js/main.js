@@ -97,7 +97,16 @@ function salvarTarefas() {
 
 }
 function recuperarTarefasSalvas(){
+    //recupera as tarefas do banco de dados e coloca na variavel tarefas
     const tarefas = localStorage.getItem('tarefas');
+console.log(tarefas);
+    //convere as tarefas recuperadas de volta em um Array 
     const listaDeTarefasRecuperadas = JSON.parse(tarefas);
+   //utilizando um for of para recuperar todos os itens do array e criamos uma tarefa para cada um deles
+    for(let tarefa of listaDeTarefasRecuperadas){
+        console.log(tarefa);
+        console.log(listaDeTarefasRecuperadas);
+        criaTarefa(tarefa);
+    }
 }
 recuperarTarefasSalvas();
