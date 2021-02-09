@@ -23,23 +23,23 @@ function iniciarContador(){
 
 }
 
-
-iniciar.addEventListener('click', function (evento) { 
-    relogio.classList.remove('pausado');
-    clearInterval(timer);
-    iniciarContador();
-});
-
-pausar.addEventListener('click', function (evento) {
-    clearInterval(timer);
-    relogio.classList.add('pausado');
-});
-
-zerar.addEventListener('click', function (evento) {
-    relogio.classList.remove('pausado');
+document.addEventListener('click',function(e){
+    const el = e.target;
+    if(el.classList.contains('zerar')){
+        relogio.classList.remove('pausado');
 
     clearInterval(timer);
     relogio.innerText = horaZero(0);
     contador = 0;
+    }else if(el.classList.contains('iniciar')){
+        relogio.classList.remove('pausado');
+    clearInterval(timer);
+    iniciarContador();
+    }else if(el.classList.contains('pausar')){
+        clearInterval(timer);
+    relogio.classList.add('pausado');
+    }
+
 });
+
 
