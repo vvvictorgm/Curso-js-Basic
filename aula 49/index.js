@@ -17,6 +17,13 @@ function executarFuncao(funcao){
 executarFuncao(souUmDado);
 
 //arrow function 
-const funcao Arrow = () =>{
+const funcaoArrow = () =>{
     console.log('sou uma arrow function');
 }
+
+const obj = {
+    falar(){
+        console.log('Estou falando');
+    }
+};
+obj.falar();
