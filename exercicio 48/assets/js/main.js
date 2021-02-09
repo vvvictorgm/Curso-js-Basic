@@ -44,3 +44,11 @@ botaoAadicionarTarefa.addEventListener('click', function () {
 
 
 });
+
+document.addEventListener('click', function(e){
+const elementoClicado = e.target;
+if(elementoClicado.classList.contains('apagar')){
+    console.log('é ele que a gente quer');
+}
+
+});
